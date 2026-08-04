@@ -24,17 +24,17 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen bg-[#FAFAFA] transition-colors duration-1000 ${isAnimating ? 'bg-[#E8F5E9]' : ''} flex flex-col items-center justify-center p-4 relative overflow-hidden`}>
+    <div className={`min-h-screen transition-colors duration-1000 ${isAnimating ? 'bg-gradient-to-br from-indigo-50 to-purple-100' : 'bg-slate-50'} flex flex-col items-center justify-center p-4 relative overflow-hidden`}>
       {/* Meditation circles */}
-      <div className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-1000 ${isAnimating ? 'opacity-40' : 'opacity-0'}`}>
-        <div className="w-[600px] h-[600px] rounded-full border-2 border-[#4CAF50] animate-ripple-1"></div>
-        <div className="w-[500px] h-[500px] rounded-full border-2 border-[#4CAF50] animate-ripple-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="w-[400px] h-[400px] rounded-full border-2 border-[#4CAF50] animate-ripple-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+      <div className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-1000 ${isAnimating ? 'opacity-30' : 'opacity-0'}`}>
+        <div className="w-[600px] h-[600px] rounded-full border border-indigo-300 animate-ripple-1"></div>
+        <div className="w-[500px] h-[500px] rounded-full border border-purple-300 animate-ripple-2 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="w-[400px] h-[400px] rounded-full border border-indigo-200 animate-ripple-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
       <div className="text-center relative z-10 w-full max-w-md">
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-          <div className="relative h-64 bg-[#E8F5E9] p-6 flex flex-col justify-end">
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden mb-8 border border-white/20">
+          <div className="relative h-64 bg-gradient-to-b from-indigo-50/50 to-purple-50/50 p-6 flex flex-col justify-end">
             <div className={`puppy-face transition-transform duration-1000 ${isAnimating ? 'scale-90' : 'scale-100'}`}>
               <div className="relative mx-auto w-48 -mb-4">
                 {/* Ears */}
@@ -65,24 +65,24 @@ export default function App() {
             </div>
           </div>
           
-          <div className="p-6">
-            <h1 className="text-3xl font-bold mb-4 text-[#4CAF50] flex items-center justify-center gap-2">
-              <Sparkles className="w-6 h-6" />
+          <div className="p-8">
+            <h1 className="text-3xl font-bold mb-6 flex items-center justify-center gap-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+              <Sparkles className="w-6 h-6 text-purple-500" />
               Puppy Wisdom
-              <Sparkles className="w-6 h-6" />
+              <Sparkles className="w-6 h-6 text-indigo-500" />
             </h1>
             
             <button
               onClick={handleClick}
               disabled={isAnimating}
-              className="w-full bg-[#4CAF50] hover:bg-[#45a049] text-white rounded-lg py-3 px-6 font-medium shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl py-4 px-6 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none disabled:hover:shadow-lg"
             >
               <Brain className="w-5 h-5" />
               Get Wisdom
             </button>
             
-            <div className={`mt-4 transition-all duration-500 ${quote ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
-              <p className="text-xl text-[#424242] font-medium">{quote}</p>
+            <div className={`mt-6 transition-all duration-500 ease-out ${quote ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
+              <p className="text-xl text-slate-700 font-medium leading-relaxed italic border-l-4 border-purple-300 pl-4 py-1 text-left">{quote}</p>
             </div>
           </div>
         </div>
