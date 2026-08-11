@@ -24,7 +24,7 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-1000 ${isAnimating ? 'bg-gradient-to-br from-indigo-50 to-purple-100' : 'bg-slate-50'} flex flex-col items-center justify-center p-4 relative overflow-hidden`}>
+    <div className={`min-h-screen transition-colors duration-1000 ${isAnimating ? 'bg-gradient-to-br from-indigo-100 via-purple-100 to-fuchsia-100' : 'bg-slate-50'} flex flex-col items-center justify-center p-4 relative overflow-hidden`}>
       {/* Meditation circles */}
       <div className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-1000 ${isAnimating ? 'opacity-30' : 'opacity-0'}`}>
         <div className="w-[600px] h-[600px] rounded-full border border-indigo-300 animate-ripple-1"></div>
@@ -33,33 +33,33 @@ export default function App() {
       </div>
 
       <div className="text-center relative z-10 w-full max-w-md">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden mb-8 border border-white/20">
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)] hover:scale-[1.02] transition-all duration-300 overflow-hidden mb-8 border border-white/20">
           <div className="relative h-64 bg-gradient-to-b from-indigo-50/50 to-purple-50/50 p-6 flex flex-col justify-end">
-            <div className={`puppy-face transition-transform duration-1000 ${isAnimating ? 'scale-90' : 'scale-100'}`}>
+            <div className={`puppy-face drop-shadow-lg transition-transform duration-1000 ${isAnimating ? 'scale-90' : 'scale-100'}`}>
               <div className="relative mx-auto w-48 -mb-4">
                 {/* Ears */}
-                <div className="absolute -top-8 -left-6 w-12 h-16 bg-[#795548] rounded-t-[2rem] transform -rotate-12"></div>
-                <div className="absolute -top-8 -right-6 w-12 h-16 bg-[#795548] rounded-t-[2rem] transform rotate-12"></div>
+                <div className="absolute -top-8 -left-6 w-12 h-16 bg-amber-800 rounded-t-[2rem] transform -rotate-12"></div>
+                <div className="absolute -top-8 -right-6 w-12 h-16 bg-amber-800 rounded-t-[2rem] transform rotate-12"></div>
                 {/* Inner Ears */}
-                <div className="absolute -top-6 -left-4 w-8 h-12 bg-[#8D6E63] rounded-t-[1.5rem] transform -rotate-12"></div>
-                <div className="absolute -top-6 -right-4 w-8 h-12 bg-[#8D6E63] rounded-t-[1.5rem] transform rotate-12"></div>
+                <div className="absolute -top-6 -left-4 w-8 h-12 bg-amber-700 rounded-t-[1.5rem] transform -rotate-12"></div>
+                <div className="absolute -top-6 -right-4 w-8 h-12 bg-amber-700 rounded-t-[1.5rem] transform rotate-12"></div>
                 {/* Face */}
-                <div className="w-48 h-40 bg-[#795548] rounded-2xl">
+                <div className="w-48 h-40 bg-amber-800 rounded-2xl">
                   {/* White Face Patch */}
-                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-40 h-32 bg-[#D7CCC8] rounded-2xl"></div>
+                  <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-40 h-32 bg-amber-100 rounded-2xl"></div>
                   {/* Eyes */}
                   <div className={`eyes transition-all duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                    <div className="absolute top-14 left-12 w-6 h-6 bg-[#3E2723] rounded-full flex items-center justify-center">
+                    <div className="absolute top-14 left-12 w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center">
                       <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
                     </div>
-                    <div className="absolute top-14 right-12 w-6 h-6 bg-[#3E2723] rounded-full flex items-center justify-center">
+                    <div className="absolute top-14 right-12 w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center">
                       <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
                     </div>
                   </div>
                   {/* Nose */}
-                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-8 h-6 bg-[#3E2723] rounded-[1rem]"></div>
+                  <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-8 h-6 bg-stone-900 rounded-[1rem]"></div>
                   {/* Mouth */}
-                  <div className={`absolute top-24 left-1/2 transform -translate-x-1/2 w-16 h-8 border-b-4 border-[#3E2723] rounded-b-full transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}></div>
+                  <div className={`absolute top-24 left-1/2 transform -translate-x-1/2 w-16 h-8 border-b-4 border-stone-900 rounded-b-full transition-opacity duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}></div>
                 </div>
               </div>
             </div>
