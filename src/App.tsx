@@ -83,7 +83,7 @@ export default function App() {
               className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl py-4 px-6 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none disabled:hover:shadow-lg"
             >
               <Brain className="w-5 h-5" />
-              Get Wisdom
+              {isAnimating ? 'Contemplating Void...' : 'Seek Validation'}
             </button>
             
             <div className={`mt-6 transition-all duration-500 ease-out ${quote ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'}`}>
