@@ -55,6 +55,11 @@ export default function App() {
                     <div className="absolute top-14 right-12 w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center">
                       <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
                     </div>
+                    {['left', 'right'].map((side) => (
+                      <div key={`eye-${side}`} className={`absolute top-14 ${side === 'left' ? 'left-12' : 'right-12'} w-6 h-6 bg-[#3E2723] rounded-full flex items-center justify-center`}>
+                        <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
+                      </div>
+                    ))}
                   </div>
                   {/* Nose */}
                   <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-8 h-6 bg-stone-900 rounded-[1rem]"></div>
