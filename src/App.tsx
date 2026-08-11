@@ -38,23 +38,24 @@ export default function App() {
             <div className={`puppy-face transition-transform duration-1000 ${isAnimating ? 'scale-90' : 'scale-100'}`}>
               <div className="relative mx-auto w-48 -mb-4">
                 {/* Ears */}
-                <div className="absolute -top-8 -left-6 w-12 h-16 bg-[#795548] rounded-t-[2rem] transform -rotate-12"></div>
-                <div className="absolute -top-8 -right-6 w-12 h-16 bg-[#795548] rounded-t-[2rem] transform rotate-12"></div>
+                {['left', 'right'].map((side) => (
+                  <div key={`ear-${side}`} className={`absolute -top-8 ${side === 'left' ? '-left-6 -rotate-12' : '-right-6 rotate-12'} w-12 h-16 bg-[#795548] rounded-t-[2rem] transform`}></div>
+                ))}
                 {/* Inner Ears */}
-                <div className="absolute -top-6 -left-4 w-8 h-12 bg-[#8D6E63] rounded-t-[1.5rem] transform -rotate-12"></div>
-                <div className="absolute -top-6 -right-4 w-8 h-12 bg-[#8D6E63] rounded-t-[1.5rem] transform rotate-12"></div>
+                {['left', 'right'].map((side) => (
+                  <div key={`inner-ear-${side}`} className={`absolute -top-6 ${side === 'left' ? '-left-4 -rotate-12' : '-right-4 rotate-12'} w-8 h-12 bg-[#8D6E63] rounded-t-[1.5rem] transform`}></div>
+                ))}
                 {/* Face */}
                 <div className="w-48 h-40 bg-[#795548] rounded-2xl">
                   {/* White Face Patch */}
                   <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-40 h-32 bg-[#D7CCC8] rounded-2xl"></div>
                   {/* Eyes */}
                   <div className={`eyes transition-all duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                    <div className="absolute top-14 left-12 w-6 h-6 bg-[#3E2723] rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
-                    </div>
-                    <div className="absolute top-14 right-12 w-6 h-6 bg-[#3E2723] rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
-                    </div>
+                    {['left', 'right'].map((side) => (
+                      <div key={`eye-${side}`} className={`absolute top-14 ${side === 'left' ? 'left-12' : 'right-12'} w-6 h-6 bg-[#3E2723] rounded-full flex items-center justify-center`}>
+                        <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
+                      </div>
+                    ))}
                   </div>
                   {/* Nose */}
                   <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-8 h-6 bg-[#3E2723] rounded-[1rem]"></div>
