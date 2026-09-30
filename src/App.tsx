@@ -49,14 +49,11 @@ export default function App() {
                   <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-40 h-32 bg-amber-100 rounded-2xl"></div>
                   {/* Eyes */}
                   <div className={`eyes transition-all duration-500 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                    <div className="absolute top-14 left-12 w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
-                    </div>
-                    <div className="absolute top-14 right-12 w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center">
-                      <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
-                    </div>
-                    {['left', 'right'].map((side) => (
-                      <div key={`eye-${side}`} className={`absolute top-14 ${side === 'left' ? 'left-12' : 'right-12'} w-6 h-6 bg-[#3E2723] rounded-full flex items-center justify-center`}>
+                    {[
+                      { id: 'left', positionClass: 'left-12' },
+                      { id: 'right', positionClass: 'right-12' }
+                    ].map(({ id, positionClass }) => (
+                      <div key={`eye-${id}`} className={`absolute top-14 ${positionClass} w-6 h-6 bg-stone-900 rounded-full flex items-center justify-center`}>
                         <div className="w-2 h-2 bg-white rounded-full absolute top-1 left-1"></div>
                       </div>
                     ))}
